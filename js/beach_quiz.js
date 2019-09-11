@@ -80,7 +80,7 @@ $(function(){
                     chartMake();
                 }, 1000);
             } else {
-                $('#qid').html(questionNo + 1);
+                $('#qid').html(questionNo + 1 + '/' +q.length.toString());
                 $('input:radio').prop('checked', false);
                 setTimeout(function(){
                     $('#quiz').show();

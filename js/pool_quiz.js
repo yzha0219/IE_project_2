@@ -11,13 +11,13 @@ $(function(){
     var questionNo = 0;
     var correctCount = 0;
     var q = [
-        {'Q':'If you take your children to the swimming pool, this time you meet an acquaintance, how can you keep your child safe?', 
-        'A':2,'C':['Let the elder children supervise the younger one','Swimming can 100% keep children safe','Stop talking and keep an eye for the kids','Not try the depth for the swimming pool']},
-        {'Q':'What do you need to do for kids’ pool toy?','A':2,'C':['To ensure if the toy is suitable for your kids','Read the instructions before using this toy','Just buy in a big store and choose a popular brand','After using the tool, leave it in the sun']},
+        {'Q':'How can you keep your children safe when you meet an acquaintance and start talking while taking them to a swimming pool?', 
+        'A':2,'C':['Let the elder child to help take care of the younger ones','Give a swim ring to the children','Keep the conversation short and keep an eye on the kids','Measure the depth of the swimming pool']},
+        {'Q':'What are the requirements for your children’s water toys?','A':2,'C':['Make sure that the tool is suitable for your kids','Ignore the instructions before using this toy','Just buy in a big store and choose a popular brand','After using the tool, leave it in the sun']},
         {'Q':'After playing tools, you need to put it away from the pool and wish it. If that is correct?', 'A':1,'C':['True','False','','']},
         {'Q':'The parents do not need to supervise their kids when kids are playing tools. Is that right?', 'A':2,'C':['True','False','','']},
-        {'Q':'If this pool has pool fence, then I can', 'A':3,'C':['Rely on the pool fence to see the scenery','Dry clothes on the pool fence','Take the kids away from the pool fence even it seems safety','Sit on the pool fence and take a photo']},
-        {'Q':'How to make sure if the pool fence is safe enough?', 'A':4, 'C':['Ensure the distance between the bottom rail and the ground is more than 100mm','Make sure the height of the pool fence is no less than 1.1m','Check the pool fence but can ignore some small things like screws','Check if there are some small holes on the pool fence']}
+        {'Q':'If this pool has pool fence, then I can', 'A':3,'C':['Lean against the pool fence to see the scenery','Dry clothes on the pool fence','Take the kids away from the pool fence even it seems safety','Sit on the pool fence and take a photo']},
+        {'Q':'Which choice below can indicate that the reliability of the pool fence is high enough?', 'A':4, 'C':['Ensure the distance between the bottom rail and the ground is more than 100mm','Make sure the height of the pool fence is no less than 1.1m','Check the pool fence but can ignore some small things like screws','Check if there are some small holes on the pool fence']}
     ];
 
  
@@ -80,7 +80,7 @@ $(function(){
                     chartMake();
                 }, 1000);
             } else {
-                $('#qid').html(questionNo + 1);
+                $('#qid').html(questionNo + 1 + '/' +q.length.toString());
                 $('input:radio').prop('checked', false);
                 setTimeout(function(){
                     $('#quiz').show();

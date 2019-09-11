@@ -11,11 +11,11 @@ $(function(){
     var questionNo = 0;
     var correctCount = 0;
     var q = [
-        {'Q':'If you take your children to the swimming pool, this time you meet an acquaintance, how can you keep your child safe?', 'A':2,'C':['True','False','','']},
-        {'Q':'Before you go down the river, what you need to confirm at the beginning?','A':4,'C':['The depth of the river','To make sure if the river is moved, and how fast it moves','Observe if there is safety exit around the river','Above of them should be aware of']},
-        {'Q':'If you take your kids to go to river, which situation is safe for kids to get in?', 'A':3,'C':['the river is not clear to observe the river bottom','the river’s speed is fast','the weather is funny and not deep','the riverbank is not very flat']},
-        {'Q':'When your kids get in the river, you need to keep your eyes for your kids. Is that right?', '1':2,'C':['True','False','','']},
-        {'Q':' How can you measure the depth for your kids?', 'A':3,'C':['Just to get in is ok','Observe the depth of the lake','Assure the ground or rock is stable','Ignore the depth if it is enough for you because you have enough time to save your children']}
+        {'Q':'If in a river, many people are swimming, then it must be safe enough for my children to swim in it. Is that right?', 'A':2,'C':['True','False','','']},
+        {'Q':'What do you need to confirm before your children enter the river?','A':4,'C':['The depth of the river','To make sure if the river is moved, and how fast it moves','Observe if there is safety exit around the river','All above of them should be aware of']},
+        {'Q':'If you take your kids to go to river, which situation is safe for kids to get in?', 'A':3,'C':['the river is not clear to observe the river bottom','the river’s speed is fast','the weather is sunny and not deep','the riverbank is not very flat']},
+        {'Q':'When your kids get in the river, you need to keep your eyes for your kids. Is that right?', '1':2,'C':['True','False','','']}
+        //{'Q':' How can you measure the depth for your kids?', 'A':3,'C':['Just to get in is ok','Observe the depth of the lake','Assure the ground or rock is stable','Ignore the depth if it is enough for you because you have enough time to save your children']}
     ];
 
  
@@ -78,7 +78,7 @@ $(function(){
                     chartMake();
                 }, 1000);
             } else {
-                $('#qid').html(questionNo + 1);
+                $('#qid').html(questionNo + 1 + '/' +q.length.toString());
                 $('input:radio').prop('checked', false);
                 setTimeout(function(){
                     $('#quiz').show();

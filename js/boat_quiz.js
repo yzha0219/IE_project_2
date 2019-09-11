@@ -12,7 +12,7 @@ $(function(){
     var correctCount = 0;
     var q = [
         {'Q':'What things you cannot drink when you at the boat?', 'A':3,'C':['Coca-Cola','Water','Alcohol','Juice']},
-        {'Q':'What do you need to pay attention to before you board the ship for your kids?','A':3,'C':['If you have taken enough food?','If you have taken kids toys?','If you have watched the weather forecast and prepared enough clothes?','None of above']},
+        {'Q':'What do you need to keep in mind before you board the ship with your kids?','A':3,'C':['If you have taken enough food?','If you have taken kids toys?','If you have watched the weather forecast and prepared enough clothes?','None of above']},
         {'Q':'Do kids need to wear flotation device on a boat?', 'A':1,'C':['Yes. And the parents need to teach kids how to use it','No. The flotation device is not comfortable.','','']},
         {'Q':'What do parents need to teach their kids before getting on the boat?', '1':2,'C':['The parents phone number and the emergency number like “000”','Get the kids necessary wearable electronic device','Parents need to teach their kids about how to use the wear flotation','All of above']}
     ];
@@ -77,7 +77,7 @@ $(function(){
                     chartMake();
                 }, 1000);
             } else {
-                $('#qid').html(questionNo + 1);
+                $('#qid').html(questionNo + 1 + '/' +q.length.toString());
                 $('input:radio').prop('checked', false);
                 setTimeout(function(){
                     $('#quiz').show();

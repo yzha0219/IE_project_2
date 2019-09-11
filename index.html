@@ -28,6 +28,7 @@
   <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/counter.css">
   <!--<script type='text/javascript'>                    
     var divElement = document.getElementById('viz1567995307417');                    
     var vizElement = divElement.getElementsByTagName('object')[0];                    
@@ -83,22 +84,30 @@
                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Education</span><span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Swimming pool</span><span class="caret"></span></a></li>
-                    <ul class="dropdown-menu">
-                      <li><a href="swimming_pool.html" class="nav-link text-left">Swimming pool</a></li>
-                      <li><a href="beach.html" class="nav-link text-left">Beach</a></li>
+                    <ul class="dropdown-submenu">
+                      <li><a href="swimming_pool.html" class="nav-link text-left">Guideline</a></li>
+                      <li><a href="pool_quiz.html" class="nav-link text-left">Quiz</a></li>
                     </ul>
-                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Beach</span><span class="caret"></span></a></li>
-                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">River and Lake</span><span class="caret"></span></a></li>
-                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Boat</span><span class="caret"></span></a></li>
+                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Beach</span><span class="caret"></span></a>
+                      <ul class="dropdown-submenu">
+                          <li><a href="beach.html" class="nav-link text-left">Guideline</a></li>
+                          <li><a href="beach_quiz.html" class="nav-link text-left">Quiz</a></li>
+                        </ul>
+                      </li>
+                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">River and Lake</span><span class="caret"></span></a><ul class="dropdown-submenu">
+                        <li><a href="river.html" class="nav-link text-left">Guideline</a></li>
+                        <li><a href="river_quiz.html" class="nav-link text-left">Quiz</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Boat</span><span class="caret"></span></a>
+                      <ul class="dropdown-submenu">
+                          <li><a href="boat.html" class="nav-link text-left">Guideline</a></li>
+                          <li><a href="boat_quiz.html" class="nav-link text-left">Quiz</a></li>
+                        </ul>
+                    </li>
                 </ul></li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Where to go</span><span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                      <li><a href="swimming_pool.html" class="nav-link text-left">Swimming pool</a></li>
-                      <li><a href="beach.html" class="nav-link text-left">Beach</a></li>
-                      <li><a href="river.html" class="nav-link text-left">River and Lake</a></li>
-                      <li><a href="boat.html" class="nav-link text-left">Boat</a></li>
-                  </ul>
-                </li>
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Where to go</span><span class="caret"></span></a></li>
+                <li><a href="contact.html" class="nav-link text-left">Factor & Info</a></li>
                 <li><a href="contact.html" class="nav-link text-left">About us</a></li>
               </ul>                                                                                                                                                                                                                                                                                         
             </nav>
@@ -121,27 +130,138 @@
         <param name='display_count' value='yes' />
         <param name='filter' value='publish=yes' /></object></div>--> 
 
-    
-    <div class="owl-carousel hero-slide owl-style">
-      <div class="intro-section container" style="background-image: url('images/pacific-4130046_1920.jpg');">
-        <div class="row justify-content-center text-center align-items-center">
-          <div class="col-md-8">
-            <span class="sub-title">Data visualization</span>
-            <h1>Data visualization</h1>
-          </div>
-        </div>
-      </div>
 
-      <div class="intro-section container" style="background-image: url('images/pexels-photo-61129.jpeg');">
-        <div class="row justify-content-center text-center align-items-center">
-          <div class="col-md-8">
-            <span class="sub-title">Data visualization</span>
-            <h1>Data visualization</h1>
-          </div>
-        </div>
-      </div>
+        <div class="stat" id="stat">
 
+            <div class="content-box">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-md-4">
+                    <div class="stat-item">
+                      <h2><span class="counter text-center">425</span></h2>
+                      <p>Children drowned in Australia</p>
+                      <p>past 10 years</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="stat-item">
+                        <h2><span class="counter text-center">64</span><span>%</span></h2>
+                        <p>Supervision absent</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-item">
+                          <h2><span class="counter text-center">41</span><span>%</span></h2>
+                          <p>in summer</p>
+                        </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="stat" id="stat">
+
+            <div class="content-box">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-md-12">
+                    <div class="stat-item">
+                      <h2><span style="color: black">It only takes </span><span style="font-size: 70px">"</span><span class="counter text-center" style="font-size: 70px">20</span><span style="font-size: 70px"> second"</span><span style="color: black">to make your kids drown! </span></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="row">
+          
+            <div class="col-lg-3 mb-5 col-md-6">
+  
+              <div class="wine_v_1 text-center pb-4">
+                <a href="shop-single.html" class="thumbnail d-block mb-4"><img src="images/pexels-photo-261400.jpeg" alt="Image" class="img-fluid"></a>
+                <div>
+                  <h3 class="heading mb-1"><a href="#">Swimming Pool</a></h3>
+                  <!--<span class="price">guideline for swimming pool</span>-->
+                </div>
+                
+  
+                <div class="wine-actions">
+                    
+                  <h3 class="heading-2"><a href="#">Swimming Pool</a></h3>
+                  
+                  <a href="swimming_pool.html" class="btn add">Read more</a>
+                </div>
+              </div>
+  
+            </div>
+  
+            <div class="col-lg-3 mb-5 col-md-6">
+  
+              <div class="wine_v_1 text-center pb-4">
+                <a href="shop-single.html" class="thumbnail d-block mb-4"><img src="images/father-daughter-beach-sea-38302.jpeg" alt="Image" class="img-fluid"></a>
+                <div>
+                  <h3 class="heading mb-1"><a href="#">Beach</a></h3>
+                </div>
+                
+  
+                <div class="wine-actions">
+                    
+                  <h3 class="heading-2"><a href="#">Beach</a></h3>
+                  
+                  <a href="beach.html" class="btn add">Read more</a>
+                </div>
+              </div>
+  
+            </div>
+  
+            <div class="col-lg-3 mb-5 col-md-6">
+  
+              <div class="wine_v_1 text-center pb-4">
+                <a href="shop-single.html" class="thumbnail d-block mb-4"><img src="images/pexels-photo-2702625.jpeg" alt="Image" class="img-fluid"></a>
+                <div>
+                  <h3 class="heading mb-1"><a href="#">River and Lake</a></h3>
+                </div>
+                
+  
+                <div class="wine-actions">
+                    
+                  <h3 class="heading-2"><a href="#">River and Lake</a></h3>
+                  
+                  <a href="river.html" class="btn add">Read more</a>
+                </div>
+              </div>
+  
+            </div>
+  
+  
+                      <div class="col-lg-3 mb-5 col-md-6">
+  
+              <div class="wine_v_1 text-center pb-4">
+                <a href="shop-single.html" class="thumbnail d-block mb-4"><img src="images/pexels-photo-2851064.jpeg" alt="Image" class="img-fluid"></a>
+                <div>
+                  <h3 class="heading mb-1"><a href="#">Boat</a></h3>
+                </div>
+                
+  
+                <div class="wine-actions">
+                    
+                  <h3 class="heading-2"><a href="#">Boat</a></h3>
+                  
+                  <a href="boat.html" class="btn add">Read more</a>
+                </div>
+              </div>
+  
+            </div>
+  
+          </div>
+    <div class="container">
+        <iframe src="https://public.tableau.com/views/Maptotaldrowningdeaths/Sheet1?:showVizHome=no&:embed=true" width="100%" height="600">
+        </iframe>
     </div>
+          
+
     <div class="site-section mt-5">
       <div class="container">
 
@@ -152,92 +272,7 @@
             <p><a href="#">More information <span class="icon-long-arrow-right"></span></a></p>
           </div>
         </div>
-        <div class="row">
-          
-          <div class="col-lg-3 mb-5 col-md-6">
-
-            <div class="wine_v_1 text-center pb-4">
-              <a href="shop-single.html" class="thumbnail d-block mb-4"><img src="images/pexels-photo-261400.jpeg" alt="Image" class="img-fluid"></a>
-              <div>
-                <h3 class="heading mb-1"><a href="#">Swimming Pool</a></h3>
-                <span class="price">guideline for swimming pool</span>
-              </div>
-              
-
-              <div class="wine-actions">
-                  
-                <h3 class="heading-2"><a href="#">Swimming Pool</a></h3>
-                
-                <a href="#" class="btn add">Read more</a>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-3 mb-5 col-md-6">
-
-            <div class="wine_v_1 text-center pb-4">
-              <a href="shop-single.html" class="thumbnail d-block mb-4"><img src="images/father-daughter-beach-sea-38302.jpeg" alt="Image" class="img-fluid"></a>
-              <div>
-                <h3 class="heading mb-1"><a href="#">Beach</a></h3>
-                <span class="price">guideline for beach</span>
-              </div>
-              
-
-              <div class="wine-actions">
-                  
-                <h3 class="heading-2"><a href="#">Beach</a></h3>
-                
-                <a href="#" class="btn add">Read more</a>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-3 mb-5 col-md-6">
-
-            <div class="wine_v_1 text-center pb-4">
-              <a href="shop-single.html" class="thumbnail d-block mb-4"><img src="images/pexels-photo-2702625.jpeg" alt="Image" class="img-fluid"></a>
-              <div>
-                <h3 class="heading mb-1"><a href="#">River and Lake</a></h3>
-                <span class="price">guideline for river and lake</span>
-              </div>
-              
-
-              <div class="wine-actions">
-                  
-                <h3 class="heading-2"><a href="#">River and Lake</a></h3>
-                
-                <a href="#" class="btn add">Read more</a>
-              </div>
-            </div>
-
-          </div>
-
-
-                    <div class="col-lg-3 mb-5 col-md-6">
-
-            <div class="wine_v_1 text-center pb-4">
-              <a href="shop-single.html" class="thumbnail d-block mb-4"><img src="images/pexels-photo-2851064.jpeg" alt="Image" class="img-fluid"></a>
-              <div>
-                <h3 class="heading mb-1"><a href="#">Boat</a></h3>
-                <span class="price">guideline for boat</span>
-              </div>
-              
-
-              <div class="wine-actions">
-                  
-                <h3 class="heading-2"><a href="#">Boat</a></h3>
-                
-                <a href="#" class="btn add">Read more</a>
-              </div>
-            </div>
-
-          </div>
-
-          
-
-        </div>
+       
       </div>
     </div>
 
@@ -251,7 +286,6 @@
         </div>
       </div>
     </div>
-
     <div class="site-section bg-light">
       <div class="container">
         <div class="owl-carousel owl-slide-3 owl-slide">
@@ -281,7 +315,6 @@
       </div>
     </div>
   
-
     <div class="site-section bg-light">
       <div class="container">
         <div class="row mb-5">
@@ -371,9 +404,16 @@
   <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/jquery.sticky.js"></script>
   <script src="js/jquery.mb.YTPlayer.min.js"></script>
-
-
-
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script>
+    jQuery(document).ready(function(){
+      $('.counter').counterUp({
+      delay: 10,
+      time: 1000
+});
+    })
+  </script>
 
   <script src="js/main.js"></script>
 
