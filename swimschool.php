@@ -7,7 +7,7 @@
     <title>My Google Map</title>
 <style>
     #map{
-      height:400px;
+      height:500px;
       width:100%;
     }
 </style>
@@ -133,6 +133,9 @@
     </tr>
     <tr>
       <td>Enter your Postcode</td>
+    </tr>
+    <tr>
+      <td>( If you want to see all swim schools, enter "all" )</td>
     </tr>
     <tr>
       <td>
