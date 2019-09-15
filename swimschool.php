@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="css/aos.css">
 <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/style.css">
-    
+
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
@@ -89,7 +89,7 @@
                 </ul></li>
                     <li><a href="contact.html" class="nav-link text-left">Factor & Info</a></li>
                     <li><a href="contact.html" class="nav-link text-left">About us</a></li>
-                  </ul>                                                  
+                  </ul>
                 </nav>
               </div>
         </div>
@@ -99,7 +99,7 @@
 
 
 
-        
+
 <?php
 //connect to database
   $DB_SERVER = "database-1.cdladq1wak27.us-west-2.rds.amazonaws.com";
@@ -116,7 +116,7 @@
   }else{
         echo "success";
  }*/
-        
+
   //if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
 
@@ -129,7 +129,10 @@
 <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
   <table border="0">
     <tr>
-      <td>POSTCODE</td>
+      <h1>Search Swim School</h1>
+    </tr>
+    <tr>
+      <td>Enter your Postcode</td>
     </tr>
     <tr>
       <td>
@@ -145,7 +148,7 @@
 <div>
 <!-- Display table data. -->
 <table border="1" cellpadding="2" cellspacing="2">
-  <tr>
+  <!--tr>
     <td>NAME</td>
     <td>ADDRESS</td>
     <td>SUBURB</td>
@@ -153,23 +156,37 @@
     <td>BUSINESS CATEGORY</td>
     <td>CONTACT</td>
     <td>WEBSITE</td>
-  </tr>
+  </tr-->
 
 
 <?php
 //get input data
 $postcode = $_POST['POSTCODE'];
-if($postcode == ""){
+
+if($postcode == "all"){
     //show all data from table
-    $result = mysqli_query($connection, "SELECT * FROM schoolSheet");}
+    $result = mysqli_query($connection, "SELECT * FROM schoolSheet");
+}
 else{
     //show related postcode data
     $result = mysqli_query($connection, "SELECT * FROM schoolSheet WHERE postcode='$postcode'");
 }
-      
+
 $nameArray = [];
 $latArray = [];
 $longArray = [];
+
+if(mysqli_num_rows($result) != 0){
+echo "<table border='1'>
+    <tr>
+        <th>NAME</th>
+        <th>ADDRESS</th>
+        <th>SUBURB</th>
+        <th>POSTCOED</th>
+        <th>BUSINESS CATEGORY</th>
+        <th>CONTACT</th>
+        <th>WEBSITE</th>
+    </tr>";
 
 while($query_data = mysqli_fetch_row($result)) {
   //add data into array
@@ -186,6 +203,8 @@ while($query_data = mysqli_fetch_row($result)) {
        "<td>",$query_data[5], "</td>",
        "<td>",$query_data[6], "</td>";
   echo "</tr>";
+
+}
 }
 ?>
 
@@ -194,13 +213,13 @@ while($query_data = mysqli_fetch_row($result)) {
 
 <div id="map"></div>
 </div>
-    
+
 <!-- Clean up. -->
 <?php
   mysqli_free_result($result);
   mysqli_close($connection);
 ?>
-    
+
 <script>
     function initMap(position){
         // Map options
@@ -215,14 +234,15 @@ while($query_data = mysqli_fetch_row($result)) {
         //console.log(nameArray);
         //console.log(latArray);
         //console.log(longArray);
-        
+
         // New map
         var map = new google.maps.Map(document.getElementById('map'), options);
         //setting boundary
         var bounds  = new google.maps.LatLngBounds();
         //content
         var infowindow = new google.maps.InfoWindow;
-       
+
+        if(nameArray.length != 0){
         //marker
         var marker, i;
         for (i = 0; i < nameArray.length; i++) {
@@ -237,18 +257,18 @@ while($query_data = mysqli_fetch_row($result)) {
                  infowindow.open(map, marker);
              }
         })(marker, i));
-            
+
             //map.setZoom(12);
             //map.setCenter(marker.getPosition());
-            
+
             //extend zoom according to position
             var loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
             bounds.extend(loc);
         }
-        
+
         //re-center map
         map.fitBounds(bounds);
-        map.panToBounds(bounds);
+        map.panToBounds(bounds);}
 }
        /*
       // Array of markers
@@ -299,4 +319,3 @@ while($query_data = mysqli_fetch_row($result)) {
 
 </body>
 </html>
-
