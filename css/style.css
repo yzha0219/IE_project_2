@@ -240,7 +240,7 @@ h1, h2, h3, h4, h5,
     padding-left: 0;
     margin-bottom: 0; }
     .site-navbar .site-navigation .site-menu .active > a {
-      color: #930077;
+      color: black;
       display: inline-block;
       padding-left: 10px;
       padding-right: 10px; }
@@ -321,8 +321,12 @@ h1, h2, h3, h4, h5,
           -o-transition: 0s all;
           transition: 0s all;
           color: #343a40; }
+          .dropdown-submenu > li > a {
+          color: #d33e04;}
+          .dropdown-menu > li > a {
+            color: #d33e04;}
         .site-navbar .site-navigation .site-menu .has-children .dropdown .active > a {
-          color: #930077 !important; }
+          color: #d33e04 !important; }
         .site-navbar .site-navigation .site-menu .has-children .dropdown > li {
           list-style: none;
           padding: 0;
@@ -426,12 +430,12 @@ h1, h2, h3, h4, h5,
       position: relative;
       color: #212529; }
       .site-mobile-menu .site-nav-wrap a:hover {
-        color: #930077; }
+        color: #d33e04; }
     .site-mobile-menu .site-nav-wrap li {
       position: relative;
       display: block; }
       .site-mobile-menu .site-nav-wrap li.active > a {
-        color: #930077 !important; }
+        color: #d33e04 !important; }
     .site-mobile-menu .site-nav-wrap .arrow-collapse {
       position: absolute;
       right: 0px;
@@ -517,7 +521,7 @@ h1, h2, h3, h4, h5,
     .sticky-wrapper .site-navbar .site-menu > li {
       display: inline-block; }
       .sticky-wrapper .site-navbar .site-menu > li.active > a {
-        color: #930077; }
+        color: #d33e04; }
   .sticky-wrapper.is-sticky .site-navbar .site-logo a {
     color: #000; }
   .sticky-wrapper.is-sticky .site-navbar .site-menu > li {
@@ -528,7 +532,7 @@ h1, h2, h3, h4, h5,
       .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a:hover {
         color: #000; }
       .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a.active:after {
-        background: #930077; }
+        background: #d33e04; }
     .sticky-wrapper.is-sticky .site-navbar .site-menu > li.active > a {
       color: #000; }
   .sticky-wrapper .shrink {
