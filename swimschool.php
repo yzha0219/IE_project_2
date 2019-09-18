@@ -25,6 +25,7 @@
 <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/style.css">
 
+
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
@@ -52,49 +53,68 @@
       </div>
 
     <div class="site-navbar py-2 js-sticky-header site-navbar-target d-none pl-0 d-lg-block" role="banner">
-      <div class="container">
-        <div class="d-flex align-items-center">
+    <div class="container">
+          <div class="d-flex align-items-center">
+
             <div class="mx-auto">
-                <nav class="site-navigation position-relative text-left" role="navigation">
-                  <ul class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
-                    <li class="active"><a href="index.html" class="nav-link text-left">Home</a></li>
-                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Education</span><span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Swimming pool</span><span class="caret"></span></a></li>
+              <nav class="site-navigation position-relative text-left" role="navigation">
+                <ul class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
+                  <li class="active"><a href="index.html" class="nav-link text-left">Home</a></li>
+                  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false"> <span class="nav-label">Education</span><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                          aria-expanded="false"> <span class="nav-label">Swimming pool</span><span
+                            class="caret"></span></a></li>
+                      <ul class="dropdown-submenu">
+                        <li><a href="swimming_pool.html" class="nav-link text-left">Guideline</a></li>
+                        <li><a href="pool_quiz_start.html" class="nav-link text-left">Quiz</a></li>
+                      </ul>
+                      <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                          aria-expanded="false"> <span class="nav-label">Beach</span><span class="caret"></span></a>
                         <ul class="dropdown-submenu">
-                          <li><a href="swimming_pool.html" class="nav-link text-left">Guideline</a></li>
-                          <li><a href="pool_quiz.html" class="nav-link text-left">Quiz</a></li>
+                          <li><a href="beach.html" class="nav-link text-left">Guideline</a></li>
+                          <li><a href="beach_quiz_start.html" class="nav-link text-left">Quiz</a></li>
                         </ul>
-                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Beach</span><span class="caret"></span></a>
-                          <ul class="dropdown-submenu">
-                              <li><a href="beach.html" class="nav-link text-left">Guideline</a></li>
-                              <li><a href="beach_quiz.html" class="nav-link text-left">Quiz</a></li>
-                            </ul>
-                          </li>
-                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">River and Lake</span><span class="caret"></span></a><ul class="dropdown-submenu">
-                            <li><a href="river.html" class="nav-link text-left">Guideline</a></li>
-                            <li><a href="river_quiz.html" class="nav-link text-left">Quiz</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Boat</span><span class="caret"></span></a>
-                          <ul class="dropdown-submenu">
-                              <li><a href="boat.html" class="nav-link text-left">Guideline</a></li>
-                              <li><a href="boat_quiz.html" class="nav-link text-left">Quiz</a></li>
-                            </ul>
-                        </li>
-                    </ul></li>
-                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Where to go</span><span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                    <li><a href="swimschool.html" class="nav-link text-left">Swim School</a></li>
-                </ul></li>
-                    <li><a href="contact.html" class="nav-link text-left">Factor & Info</a></li>
-                    <li><a href="contact.html" class="nav-link text-left">About us</a></li>
-                  </ul>
-                </nav>
-              </div>
+                      </li>
+                      <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                          aria-expanded="false"> <span class="nav-label">River and Lake</span><span
+                            class="caret"></span></a>
+                        <ul class="dropdown-submenu">
+                          <li><a href="river.html" class="nav-link text-left">Guideline</a></li>
+                          <li><a href="river_quiz_start.html" class="nav-link text-left">Quiz</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                          aria-expanded="false"> <span class="nav-label">Boat</span><span class="caret"></span></a>
+                        <ul class="dropdown-submenu">
+                          <li><a href="boat.html" class="nav-link text-left">Guideline</a></li>
+                          <li><a href="boat_quiz_start.html" class="nav-link text-left">Quiz</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false"> <span class="nav-label">Where to go</span><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="swimschool.php" class="nav-link text-left">Swim School</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false"> <span class="nav-label">First Aid</span><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="cpr.html" class="nav-link text-left">CPR</a></li>
+                      <li><a href="sea_creature.html" class="nav-link text-left">Sea Creature attacking</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="contact.html" class="nav-link text-left">About us</a></li>
+                </ul>
+              </nav>
+
+            </div>
+
+          </div>
         </div>
-      </div>
-    </div>
     </div>
 
 
@@ -129,7 +149,7 @@
 <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
   <table border="0">
     <tr>
-      <h1>Search Swim School</h1>
+    <h1 style="color: #d33e04">Search Swim School</h1>
     </tr>
     <tr>
       <td>Options you can enter:</td>
