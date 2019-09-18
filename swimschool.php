@@ -63,23 +63,23 @@
                         <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Swimming pool</span><span class="caret"></span></a></li>
                         <ul class="dropdown-submenu">
                           <li><a href="swimming_pool.html" class="nav-link text-left">Guideline</a></li>
-                          <li><a href="pool_quiz_start.html" class="nav-link text-left">Quiz</a></li>
+                          <li><a href="pool_quiz.html" class="nav-link text-left">Quiz</a></li>
                         </ul>
                         <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Beach</span><span class="caret"></span></a>
                           <ul class="dropdown-submenu">
                               <li><a href="beach.html" class="nav-link text-left">Guideline</a></li>
-                              <li><a href="beach_quiz_start.html" class="nav-link text-left">Quiz</a></li>
+                              <li><a href="beach_quiz.html" class="nav-link text-left">Quiz</a></li>
                             </ul>
                           </li>
                         <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">River and Lake</span><span class="caret"></span></a><ul class="dropdown-submenu">
                             <li><a href="river.html" class="nav-link text-left">Guideline</a></li>
-                            <li><a href="river_quiz_start.html" class="nav-link text-left">Quiz</a></li>
+                            <li><a href="river_quiz.html" class="nav-link text-left">Quiz</a></li>
                           </ul>
                         </li>
                         <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Boat</span><span class="caret"></span></a>
                           <ul class="dropdown-submenu">
                               <li><a href="boat.html" class="nav-link text-left">Guideline</a></li>
-                              <li><a href="boat_quiz_start.html" class="nav-link text-left">Quiz</a></li>
+                              <li><a href="boat_quiz.html" class="nav-link text-left">Quiz</a></li>
                             </ul>
                         </li>
                     </ul></li>
@@ -87,11 +87,7 @@
                       <ul class="dropdown-menu">
                     <li><a href="swimschool.html" class="nav-link text-left">Swim School</a></li>
                 </ul></li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">First Aid</span><span class="caret"></span></a>
-              <ul class="dropdown-menu">
-            <li><a href="cpr.html" class="nav-link text-left">CPR</a></li>
-            <li><a href="sea_creature.html" class="nav-link text-left">Sea Creature attacking</a></li>
-              </ul></li>
+                    <li><a href="contact.html" class="nav-link text-left">Factor & Info</a></li>
                     <li><a href="contact.html" class="nav-link text-left">About us</a></li>
                   </ul>
                 </nav>
@@ -114,13 +110,13 @@
   /* Connect to MySQL and select the database. */
   $connection = mysqli_connect($DB_SERVER, $DB_USERNAME, $DB_PASSWORD);
 
-/* check connect success or not
-  if(!$connection){
+// check connect success or not
+/*  if(!$connection){
         echo "fail";
   }else{
         echo "success";
- }*/
-
+ }
+*/
   //if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
 
@@ -136,8 +132,18 @@
       <h1>Search Swim School</h1>
     </tr>
     <tr>
-      <td>Enter your Postcode</td>
+      <td>Options you can enter:</td>
     </tr>
+    <tr>
+      <td>1. Postcode</td>
+    </tr>
+    <tr>
+      <td>2. Suburb</td>
+    </tr>
+    <tr>
+      <td>3. Business Category: Swim school/Nippers</td>
+    </tr>
+
     <tr>
       <td>( If you want to see all swim schools, enter "all" )</td>
     </tr>
@@ -176,8 +182,10 @@ if($postcode == "all"){
 }
 else{
     //show related postcode data
-    $result = mysqli_query($connection, "SELECT * FROM schoolSheet WHERE postcode='$postcode'");
-}
+//    $result = mysqli_query($connection, "SELECT * FROM schoolSheet WHERE surburb='$postcode'");
+   // $result = mysqli_query($connection, "SELECT * FROM schoolSheet WHERE postcode='$postcode' OR `Business Category`='$postcode' OR surburn='$postcode'");
+$result = mysqli_query($connection, "SELECT * FROM schoolSheet WHERE postcode='$postcode' OR suburb='$postcode' OR businesscategory='$postcode'");
+ }
 
 $nameArray = [];
 $latArray = [];
