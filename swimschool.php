@@ -235,6 +235,9 @@ while($query_data = mysqli_fetch_row($result)) {
 
 }
 }
+else{
+  echo "No Result";
+}
 ?>
 
 </table>
