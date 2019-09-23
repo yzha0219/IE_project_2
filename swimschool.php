@@ -11,7 +11,8 @@
       width:100%;
     }
 </style>
-
+<link href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Montserrat:400,700|Roboto&display=swap"
+    rel="stylesheet">
 <link rel="stylesheet" href="fonts/icomoon/style.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/jquery-ui.css">
@@ -28,6 +29,7 @@
 
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
 
     <div class="site-wrap">
            <div class="site-mobile-menu site-navbar-target">
@@ -94,14 +96,20 @@
                       </li>
                     </ul>
                   </li>
-                  <li><a href="swimschool.php" class="nav-link text-left">Where to go</a></li>
+                  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false"> <span class="nav-label">Where to go</span><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="swimschool.php" class="nav-link text-left">Swim School</a></li>
+                    </ul>
+                  </li>
                   <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                       aria-expanded="false"> <span class="nav-label">First Aid</span><span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="cpr.html" class="nav-link text-left">CPR</a></li>
-                      <li><a href="sea_creature.html" class="nav-link text-left">Marine Animal bites</a></li>
+                      <li><a href="sea_creature.html" class="nav-link text-left">Sea Creature attacking</a></li>
                     </ul>
                   </li>
+                  <li><a href="contact.html" class="nav-link text-left">About us</a></li>
                 </ul>
               </nav>
 
@@ -120,10 +128,8 @@
   $DB_USERNAME = "master";
   $DB_PASSWORD = "master123";
   $DB_DATABASE = "innodb";
-
   /* Connect to MySQL and select the database. */
   $connection = mysqli_connect($DB_SERVER, $DB_USERNAME, $DB_PASSWORD);
-
 // check connect success or not
 /*  if(!$connection){
         echo "fail";
@@ -132,8 +138,6 @@
  }
 */
   //if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
-
-
   $database = mysqli_select_db($connection, $DB_DATABASE);
     ?>
 
@@ -172,6 +176,13 @@
   </table>
 </form>
 
+            <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+         
+         
+      
+
 <div>
 <!-- Display table data. -->
 <table border="1" cellpadding="2" cellspacing="2">
@@ -189,7 +200,6 @@
 <?php
 //get input data
 $postcode = $_POST['POSTCODE'];
-
 if($postcode == "all"){
     //show all data from table
     $result = mysqli_query($connection, "SELECT * FROM schoolSheet");
@@ -200,11 +210,9 @@ else{
    // $result = mysqli_query($connection, "SELECT * FROM schoolSheet WHERE postcode='$postcode' OR `Business Category`='$postcode' OR surburn='$postcode'");
 $result = mysqli_query($connection, "SELECT * FROM schoolSheet WHERE postcode='$postcode' OR suburb='$postcode' OR businesscategory='$postcode'");
  }
-
 $nameArray = [];
 $latArray = [];
 $longArray = [];
-
 if(mysqli_num_rows($result) != 0){
 echo "<table border='1'>
     <tr>
@@ -216,13 +224,11 @@ echo "<table border='1'>
         <th>CONTACT</th>
         <th>WEBSITE</th>
     </tr>";
-
 while($query_data = mysqli_fetch_row($result)) {
   //add data into array
   array_push($nameArray,$query_data[0]);
   array_push($latArray,$query_data[7]);
   array_push($longArray,$query_data[8]);
-
   echo "<tr>";
   echo "<td>",$query_data[0], "</td>",
        "<td>",$query_data[1], "</td>",
@@ -232,19 +238,22 @@ while($query_data = mysqli_fetch_row($result)) {
        "<td>",$query_data[5], "</td>",
        "<td>",$query_data[6], "</td>";
   echo "</tr>";
-
 }
 }
-else{
-  echo "No Result";
-}
+      else{
+          echo "No result for this search";
+      }
 ?>
 
 </table>
-    </div>
+    </div>   </div>
+               <div class="col-md-6">
+       
 
-<div id="map"></div>
+<div id="map"></div>     </div>
 </div>
+                  </div>
+            </div>
 
 <!-- Clean up. -->
 <?php
@@ -266,14 +275,12 @@ else{
         //console.log(nameArray);
         //console.log(latArray);
         //console.log(longArray);
-
         // New map
         var map = new google.maps.Map(document.getElementById('map'), options);
         //setting boundary
         var bounds  = new google.maps.LatLngBounds();
         //content
         var infowindow = new google.maps.InfoWindow;
-
         if(nameArray.length != 0){
         //marker
         var marker, i;
@@ -282,22 +289,18 @@ else{
             position: new google.maps.LatLng(latArray[i], longArray[i]),
             map: map
         });
-
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
                  infowindow.setContent(nameArray[i]);
                  infowindow.open(map, marker);
              }
         })(marker, i));
-
             //map.setZoom(12);
             //map.setCenter(marker.getPosition());
-
             //extend zoom according to position
             var loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
             bounds.extend(loc);
         }
-
         //re-center map
         map.fitBounds(bounds);
         map.panToBounds(bounds);}
@@ -314,13 +317,11 @@ else{
           content:'Klim Swim Richmond'
         }
       ];
-
       // Loop through markers
       for(var i = 0;i < markers.length;i++){
         // Add marker
         addMarker(markers[i]);
       }
-
       // Add Marker Function
       function addMarker(props){
         var marker = new google.maps.Marker({
@@ -328,14 +329,11 @@ else{
           map:map,
           //icon:props.iconImage
         });
-
-
         // Check content
         if(props.content){
           var infoWindow = new google.maps.InfoWindow({
             content:props.content
           });
-
           marker.addListener('click', function(){
             infoWindow.open(map, marker);
           });
@@ -361,12 +359,6 @@ else{
   <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/jquery.sticky.js"></script>
   <script src="js/jquery.mb.YTPlayer.min.js"></script>
-
-
-
-
-  <script src="js/main.js"></script>
-
 
 </body>
 </html>

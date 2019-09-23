@@ -30,6 +30,7 @@
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/counter.css">
+  <link rel="stylesheet" href="css/clock.css">
   <!--<script type='text/javascript'>                    
     var divElement = document.getElementById('viz1567995307417');                    
     var vizElement = divElement.getElementsByTagName('object')[0];                    
@@ -145,42 +146,41 @@
         <param name='display_count' value='yes' />
         <param name='filter' value='publish=yes' /></object></div>-->
 
-
         <div class="stat" id="stat">
 
           <div class="content-box">
             <div class="container">
               <div class="row text-center">
                 <div class="col-md-4">
-                  <div class="stat-item">
-                    <h2><span class="counter text-center">425</span></h2>
-                    <p>Children were dead from drowning in Australia</p>
-                    <p>past 10 years</p>
+                  <div class="container-clock">
+                    <div class="setters">
+                      <div class="minutes-set">
+                        <button data-setter="minutes-plus">+</button>
+                        <button data-setter="minutes-minus">-</button>
+                      </div>
+                      <div class="seconds-set">
+                        <button data-setter="seconds-plus">+</button>
+                        <button data-setter="seconds-minus">-</button>
+                      </div>
+                    </div>
+                    <div class="circle"> <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(110,110)">
+                          <circle r="100" class="e-c-base" />
+                          <g transform="rotate(-90)">
+                            <circle r="100" class="e-c-progress" />
+                            <g id="e-pointer">
+                              <circle cx="100" cy="0" r="8" class="e-c-pointer" />
+                            </g>
+                          </g>
+                        </g>
+                      </svg> </div>
+                    <div class="controlls">
+                      <div class="display-remain-time">00:20</div>
+                      <button class="play" id="pause"></button>
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="stat-item">
-                    <h2><span class="counter text-center">64</span><span>%</span></h2>
-                    <p>Supervision absent</p>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="stat-item">
-                    <h2><span class="counter text-center">41</span><span>%</span></h2>
-                    <p>in summer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="stat" id="stat">
-
-          <div class="content-box">
-            <div class="container">
-              <div class="row text-center">
-                <div class="col-md-12">
+                <div class="col-md-8">
                   <div class="stat-item">
                     <h2><span style="color: black">It only takes </span><span style="font-size: 70px">"</span><span
                         class="counter text-center" style="font-size: 70px">20</span><span style="font-size: 70px">
@@ -191,6 +191,8 @@
             </div>
           </div>
         </div>
+
+
 
         <div class="row">
 
@@ -218,8 +220,8 @@
           <div class="col-lg-3 mb-5 col-md-6">
 
             <div class="wine_v_1 text-center pb-4">
-              <a href="beach.html" class="thumbnail d-block mb-4"><img
-                  src="images/father-daughter-beach-sea-38302.jpeg" alt="Image" class="img-fluid"></a>
+              <a href="beach.html" class="thumbnail d-block mb-4"><img src="images/father-daughter-beach-sea-38302.jpeg"
+                  alt="Image" class="img-fluid"></a>
               <div>
                 <h3 class="heading mb-1"><a href="#">Beach</a></h3>
               </div>
@@ -259,8 +261,8 @@
           <div class="col-lg-3 mb-5 col-md-6">
 
             <div class="wine_v_1 text-center pb-4">
-              <a href="boat.html" class="thumbnail d-block mb-4"><img src="images/pexels-photo-2851064.jpeg"
-                  alt="Image" class="img-fluid"></a>
+              <a href="boat.html" class="thumbnail d-block mb-4"><img src="images/pexels-photo-2851064.jpeg" alt="Image"
+                  class="img-fluid"></a>
               <div>
                 <h3 class="heading mb-1"><a href="#">Boat</a></h3>
               </div>
@@ -275,8 +277,37 @@
             </div>
 
           </div>
-
         </div>
+
+        <div class="stat" id="stat">
+
+          <div class="content-box">
+            <div class="container">
+              <div class="row text-center">
+                <div class="col-md-4">
+                  <div class="stat-item">
+                    <h2><span class="counter text-center">425</span></h2>
+                    <p>Children were dead from drowning in Australia</p>
+                    <p>past 10 years</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="stat-item">
+                    <h2><span class="counter text-center">64</span><span>%</span></h2>
+                    <p>Supervision absent</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="stat-item">
+                    <h2><span class="counter text-center">41</span><span>%</span></h2>
+                    <p>in summer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="container">
           <iframe src="https://public.tableau.com/views/Maptotaldrowningdeaths/Sheet1?:showVizHome=no&:embed=true"
             width="100%" height="600">
@@ -431,6 +462,7 @@
   <script src="js/jquery.mb.YTPlayer.min.js"></script>
   <script src="js/jquery.counterup.min.js"></script>
   <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/clock.js"></script>
   <script>
     jQuery(document).ready(function () {
       $('.counter').counterUp({
